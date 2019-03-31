@@ -1,0 +1,57 @@
+---
+layout: default
+---
+
+<div class="recipe">
+	<div class="recipe__hero-img img-box"><img src="/assets/img/uploads/{{page.thumbnail}}" alt="Imagen de {{page.title}}" class="img-box__img"></div>
+
+	<h1 class="recipe__title">{{page.title}}</h1>
+
+	<ul class="recipe__meta recipe-meta">
+		<li class="recipe-meta__item"><span class="recipe-listing__category">{{page.category}}</span></li>
+		<li class="recipe-meta__item"><span class="recipe-listing__difficulty">{{page.difficulty}}</span></li>
+	</ul>
+
+	<div class="layout__wrapper">
+		<div class="recipe__sidebar layout__sidebar">
+			<div class="recipe__ingredients-box">
+				<h3 class="recipe__ingredients-box-title">Ingredientes</h3>
+				{% for ingredients-list in page.recipe-ingredients %}
+					<h4 class="recipe__ingredients-title">{{ingredients-list.ingredients-list-title}}</h4>
+					<ul class="recipe__ingredients">
+						{% for ingredient in ingredients-list.ingredients %}
+							<li class="recipe__ingredient">{{ingredient}}</li>
+						{% endfor %}
+					</ul>
+				{% endfor %}
+			</div>
+		</div>
+
+
+		<div class="recipe__content layout__content">
+			{{page.content}}
+
+			<div class="recipe__elaboration">
+				{% for elaboration-group in page.elaboration %}
+					<h2 class="recipe__steps-title">{{elaboration-group.group-title}}</h2>
+					<ol class="recipe__steps">
+						{% for step in elaboration-group.steps %}
+							<li class="recipe__step">{{step}}</li>
+						{% endfor %}
+					</ol>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+
+
+
+{% comment %}
+	{% for tag in page.tags %}
+	    <a href="/tags/{{ tag }}/">{{ tag }}</a>
+	{% endfor %}
+{% endcomment %}
+</div>
+
+

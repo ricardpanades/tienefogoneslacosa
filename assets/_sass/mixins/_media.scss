@@ -1,0 +1,35 @@
+/*--------------------------------------------------------*\
+     MEDIA QUERY MIXIN
+\*--------------------------------------------------------*/
+
+/**
+ * Mixin para llamar las mediaqueries
+ */
+
+
+ // large  :  1024px -> 64rem tablet big
+ // medium :  768px  -> 48rem tablet
+ // small  :  480px  -> 30rem mobile portrait
+ // xsmall :  320px  -> 20rem mobile
+
+ $media-breakpoints: (
+ 	'large': '(max-width: 64rem)',
+ 	'medium': '(max-width: 48rem)',
+ 	'small': '(max-width: 30rem)',
+ 	'xsmall': '(max-width: 20rem)',
+ ) !default;
+
+
+
+
+ @mixin media($breakpoints...) {
+ 	@each $breakpoint in $breakpoints {
+ 		@if map-has-key($media-breakpoints, $breakpoint) {
+ 			@media #{map-get($media-breakpoints, $breakpoint)} {
+ 				@content;
+ 			}
+ 		} @else {
+ 			@warn "error";
+ 		}
+ 	}
+ }

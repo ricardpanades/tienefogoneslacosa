@@ -1,0 +1,28 @@
+---
+layout: default
+title: Recetas
+---
+
+<h1 class="layout__title">Todas las recetas</h1>
+
+<ul class="recipes-list">
+	{% assign recipes = site.recipes %}
+	{% for recipe in recipes %}
+	<li class="recipes-list__item">
+		<a href="{{recipe.url}}" class="recipe-listing">
+			<div class="recipe-listing__thumbnail img-box">
+				<img src="/assets/img/uploads/{{recipe.thumbnail}}" class="img-box__img">
+			</div>
+
+			<div class="recipe-listing__content">
+				<h2 class="recipe-listing__title">{{recipe.title}}</h2>
+
+				<ul class="recipe-meta">
+					<li class="recipe-meta__item"><span class="recipe-listing__category">{{recipe.category}}</span></li>
+					<li class="recipe-meta__item"><span class="recipe-listing__difficulty">{{recipe.difficulty}}</span></li>
+				</ul>
+			</div>
+		</a>
+	</li>
+	{% endfor %}
+</ul>
