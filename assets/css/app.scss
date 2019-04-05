@@ -539,7 +539,7 @@ a {
 	}
 
 	&__social-list {
-		margin-top: 0.5rem;
+		margin-top: 1rem;
 		margin-bottom: 0;
 		padding: 0;
 		display: inline-block;
@@ -566,16 +566,32 @@ a {
 				text-align: center;
 				line-height: 1;
 
+				&:hover {
+					color: #fff;
+				}
+
 				&--twitter {
 					background: #1da1f2;
+
+					&:hover {
+						background: mix(white, #1da1f2, 30%);
+					}
 				}
 
 				&--facebook {
 					background: #3b5998;
+
+					&:hover {
+						background: mix(white, #3b5998, 30%);
+					}
 				}
 
 				&--pinterest {
 					background: #bd081c;
+
+					&:hover {
+						background: mix(white, #bd081c, 30%);
+					}
 				}
 
 				.fa {
