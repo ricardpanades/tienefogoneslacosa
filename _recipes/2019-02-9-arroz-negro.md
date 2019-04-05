@@ -11,18 +11,18 @@ difficulty: Medio
 recipe-ingredients:
   - ingredients-list-title:
     ingredients:
-       - 400g de arroz bomba
-       - 800ml de agua o caldo de pescado
-       - 500g mejillones
-       - 200g almejas
-       - 1 sepia con su melsa a parte
-       - 14 gambas rojas
-       - 1 cebolla
-       - Medio pimiento verde
-       - Un puñado de judías verdes
-       - 3 o 4 dientes de ajo
-       - Tomate natural rayado
-       - Picada de ajo y perejil
+      - 400g de arroz bomba
+      - 800ml de agua o caldo de pescado
+      - 500g mejillones
+      - 200g almejas
+      - 1 sepia con su melsa a parte
+      - 14 gambas rojas
+      - 1 cebolla
+      - Medio pimiento verde
+      - Un puñado de judías verdes
+      - 3 o 4 dientes de ajo
+      - Tomate natural rayado
+      - Picada de ajo y perejil
 elaboration:
   - group-title: Elaboración
     steps:
