@@ -27,6 +27,7 @@ pinterest_username: tienefogoneslacosa
 
 # Build settings
 markdown: kramdown
+future: false
 plugins:
   - jekyll-feed
 
