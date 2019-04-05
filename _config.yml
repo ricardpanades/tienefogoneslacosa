@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Tiene Fogones la Cosa
-email: your-email@example.com
+email: tienefogoneslacosa@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Tiene fogones la cosa es un blog de cocina con muchas recetas deliciosas y mucho más.
 baseurl: "" # the subpath of your site, e.g. /blog
