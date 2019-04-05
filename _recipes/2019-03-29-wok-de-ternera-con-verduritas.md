@@ -1,7 +1,7 @@
 ---
 layout: recipe
 title: Wok de ternera con verduritas
-category: postres
+category: Primeros
 thumbnail: wok-de-ternera-con-verduritas.jpg
 tags:
   - wok

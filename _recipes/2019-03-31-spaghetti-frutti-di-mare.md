@@ -1,7 +1,7 @@
 ---
 layout: recipe
 title: Spaghetti frutti di mare
-category: primero
+category: Primeros
 thumbnail: spaghetti-frutti-di-mare.jpg
 tags:
   - spaghetti
@@ -12,7 +12,7 @@ recipe-ingredients:
   - ingredients-list-title:
     ingredients:
       - 250g de espaguetis negros
-      - 1 sepia r con su tinta
+      - 1 sepia con su tinta
       - 4 gambas
       - 10 mejillones
       - 1 cebolla

@@ -1,7 +1,7 @@
 ---
 layout: recipe
 title: Garbanzos con espinacas y chorizo
-category: primero
+category: Primeros
 thumbnail: garbanzos-con-espinacas-y-chorizo.jpg
 tags:
   - spaghetti
@@ -24,7 +24,7 @@ recipe-ingredients:
 elaboration:
   - group-title: Elaboración
     steps:
-      - En primer lugar, empezaremos con el sofrito. Para ello, troceamos la cebolla y la guindilla bien pequeña, cuando la cebolla este transparente pondremos el choricillo y las setas que habremos deshidratado antes con un poco de agua caliente o caldo.
+      - En primer lugar, empezaremos con el sofrito. Para ello, troceamos la cebolla y la guindilla bien pequeña, lo ponemos al fuego, cuando la cebolla este transparente pondremos el choricillo y las setas que habremos deshidratado antes con un poco de agua caliente o caldo.
       - Dejaremos sofreír unos minutos, y añadiremos el tomate rallado. Salpimentamos.
       - Bajamos el fuego y dejamos un poco mas hasta que se haga el tomate. Luego le añadiremos los espinacas que habremos hervido y colado antes, y dejaremos que se rehogue unos minutos.
       - Por último, verteremos los garbanzos y los dejaremos unos 5 minutos para que cojan el gusto de todo el sofrito.

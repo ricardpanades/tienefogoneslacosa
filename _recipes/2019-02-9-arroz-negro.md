@@ -1,7 +1,7 @@
 ---
 layout: recipe
 title: Arroz negro
-category: Primero
+category: Primeros
 thumbnail: arroz-negro.jpg
 tags:
   - arroz
