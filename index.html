@@ -6,7 +6,7 @@ id: index
 ---
 
 <ul class="recipes-list layout__wrapper">
-	{% assign recipes = (site.recipes | sort: 'date') | reverse %}
+	{% assign recipes = site.recipes | sort: 'date' | reverse %}
 	{% for recipe in recipes %}
 
 	{% if forloop.first == true %}

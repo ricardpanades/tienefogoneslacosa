@@ -42,21 +42,52 @@ layout: default
 				{% endfor %}
 			</div>
 
+			<!-- Social Share -->
 			<div class="recipe__social-share social-share">
 				<h4 class="social-share__title">Te ha gustado la receta? Compártela!</h4>
 
 				<ul class="social-share__social-list">
 					<li class="social-share__social-item">
-						<a class="social-share__social-link social-share__social-link--twitter" href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ site.baseurl }}{{ page.url }}" onclick="window.open(this.href, 'pop-up', 'left=400,top=400,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir {{page.title}} en Twitter"><i class="fa fa-twitter"></i></a>
+						<a class="social-share__social-link social-share__social-link--twitter" href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ site.baseurl }}{{ page.url }}" onclick="window.open(this.href, 'pop-up', 'left=400,top=400,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir {{page.title}} en Twitter"><i class="fab fa-twitter"></i></a>
 					</li>
 					<li class="social-share__social-item">
-						<a class="social-share__social-link social-share__social-link--facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ site.baseurl }}{{ page.url }}" onclick="window.open(this.href, 'pop-up', 'left=400,top=400,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir {{page.title}} en Facebook"><i class="fa fa-facebook-official"></i></a>
+						<a class="social-share__social-link social-share__social-link--facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ site.baseurl }}{{ page.url }}" onclick="window.open(this.href, 'pop-up', 'left=400,top=400,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Compartir {{page.title}} en Facebook"><i class="fab fa-facebook"></i></a>
 					</li>
 					<li class="social-share__social-item">
 						<a class="social-share__social-link social-share__social-link--pinterest" href="https://pinterest.com/pin/create/button/?url=&media={{ site.url }}{{ site.baseurl }}{{ page.url }}&description={{ page.title }}" onclick="window.open(this.href, 'pop-up', 'left=400,top=400,width=700,height=700,toolbar=1,resizable=0'); return false;"
-						title="Compartir {{page.title}} en Pinteres"><i class="fa fa-pinterest"></i></a>
+						title="Compartir {{page.title}} en Pinteres"><i class="fab fa-pinterest"></i></a>
 					</li>
 				</ul>
+			</div>
+
+			<!-- Next and prev recipes -->
+			{% assign recipes = site.recipes | sort: 'date' %}
+			{% for recipe in recipes %}
+			{% if recipe.title == page.title %}
+				{% assign prevUrl = prev.url %}
+				{% assign prevTitle = prev.title %}
+				{% assign next = recipes[forloop.index] %}
+				{% assign nextURL = next.url %}
+				{% assign nextTitle = next.title %}
+			{% endif %}
+			{% assign prev = recipe %}
+			{% endfor %}
+
+			<div class="recipe__prev-next">
+				{% if recipes.size > 1 %}
+					{% if prevUrl and prevTitle %}
+						<a class="recipe__prev-next-link" href="{{prevUrl}}">
+							<span class="recipe__prev-next-heading"><i class="fal fa-long-arrow-left"></i> Receta anterior</span>
+							<h2 class="recipe__prev-next-title">{{prevTitle}}</h2>
+						</a>
+					{% endif %}
+					{% if nextURL and nextTitle %}
+						<a class="recipe__prev-next-link recipe__prev-next-link--next" href="{{nextURL}}">
+							<span class="recipe__prev-next-heading">Siguiente receta <i class="fal fa-long-arrow-right"></i></span>
+							<h2 class="recipe__prev-next-title">{{nextTitle}}</h2>
+						</a>
+					{% endif %}
+				{% endif %}
 			</div>
 		</div>
 	</div>
