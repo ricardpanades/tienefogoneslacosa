@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>{{page.title}}</title>
+		<title>{% if page.title == site.title %}{{page.title}}{% else %}{{page.title}} · {{site.title}}{% endif %}</title>
 		<meta name="description" content="{{page.meta}}">
 		<meta name="viewport" content="width = device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -25,7 +25,6 @@
 
 	<body>
 		<div class="site layout">
-
 			<div class="header">
 				<a href="{{site.baseurl}}/" class="header__logo">TFLC</a>
 
