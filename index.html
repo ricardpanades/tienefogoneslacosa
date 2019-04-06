@@ -8,8 +8,8 @@ id: index
 <ul class="recipes-list layout__wrapper" itemscope itemtype="http://schema.org/Blog">
 	{% assign recipes = site.recipes | sort: 'date' | reverse %}
 	{% for recipe in recipes %}
-		<li class="recipes-list__item{% if forloop.first == true %} recipes-list__item--first{% endif %}" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-			<a href="{{recipe.url}}" class="recipe-listing recipe-listing--first" itemprop="url">
+		<li class="recipes-list__item{% if forloop.first %} recipes-list__item--first{% endif %}" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+			<a href="{{recipe.url}}" class="recipe-listing{% if forloop.first %} recipe-listing--first{% endif %}" itemprop="url">
 				<div class="recipe-listing__thumbnail img-box">
 					<img src="/assets/img/uploads/{{recipe.thumbnail}}" alt="Imagen de {{recipe.title}}" class="img-box__img" itemprop="image">
 				</div>
@@ -24,7 +24,7 @@ id: index
 
 					<!-- Only if enhanced -->
 					{% if forloop.first == true %}
-					<span class="btn recipe-listing__btn">Ver receta</span>
+						<span class="btn recipe-listing__btn">Ver receta</span>
 					{% endif %}
 				</div>
 			</a>
