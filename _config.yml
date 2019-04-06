@@ -30,6 +30,7 @@ markdown: kramdown
 future: false
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 
 sass:
   sass_dir: assets/_sass
