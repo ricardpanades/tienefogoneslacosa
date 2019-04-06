@@ -2,13 +2,18 @@
 layout: default
 ---
 
-<div class="recipe">
-	<div class="recipe__hero-img img-box"><img src="/assets/img/uploads/{{page.thumbnail}}" alt="Imagen de {{page.title}}" class="img-box__img"></div>
+<div class="recipe" itemscope itemtype="http://schema.org/Recipe">
+	<div class="recipe__hero-img img-box"><img src="/assets/img/uploads/{{page.thumbnail}}" alt="Imagen de {{page.title}}" class="img-box__img" itemprop="image"></div>
 
-	<h1 class="recipe__title">{{page.title}}</h1>
+	<h1 class="recipe__title" itemprop="name">{{page.title}}</h1>
+
+	<meta itemprop="datePublished" content="{{page.date}}">
+	<meta itemprop="keywords" content="{% for tag in page.tags %}{% if forloop.last %}{{ tag }}{% else %}{{tag}}, {% endif %}{% endfor %}">
+
+
 
 	<ul class="recipe__meta recipe-meta">
-		<li class="recipe-meta__item"><span class="recipe-listing__category">{{page.category}}</span></li>
+		<li class="recipe-meta__item"><span class="recipe-listing__category" itemprop="recipeCategory">{{page.category}}</span></li>
 		<li class="recipe-meta__item"><span class="recipe-listing__difficulty">{{page.difficulty}}</span></li>
 	</ul>
 
@@ -20,7 +25,7 @@ layout: default
 					<h4 class="recipe__ingredients-title">{{ingredients-list.ingredients-list-title}}</h4>
 					<ul class="recipe__ingredients">
 						{% for ingredient in ingredients-list.ingredients %}
-							<li class="recipe__ingredient">{{ingredient}}</li>
+							<li class="recipe__ingredient" itemprop="recipeIngredient">{{ingredient}}</li>
 						{% endfor %}
 					</ul>
 				{% endfor %}
@@ -29,16 +34,22 @@ layout: default
 
 
 		<div class="recipe__content layout__content">
-			{{page.content}}
+			<div itemprop="description">{{page.content}}</div>
 
-			<div class="recipe__elaboration">
+			<div class="recipe__elaboration" itemprop="recipeInstructions" itemscope itemtype="http://schema.org/HowTo">
 				{% for elaboration-group in page.elaboration %}
-					<h2 class="recipe__steps-title">{{elaboration-group.group-title}}</h2>
-					<ol class="recipe__steps">
-						{% for step in elaboration-group.steps %}
-							<li class="recipe__step">{{step}}</li>
-						{% endfor %}
-					</ol>
+					<div itemprop="step" itemscope itemtype="http://schema.org/HowToSection">
+						<h2 class="recipe__steps-title" itemprop="name">{{elaboration-group.group-title}}</h2>
+						<ol class="recipe__steps">
+							{% assign steps = elaboration-group.steps %}
+							{% for step in steps %}
+								<li class="recipe__step" itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
+									<meta itemprop="position" content="{{ forloop.index }}"/>
+									<span itemprop="text">{{step}}</span>
+								</li>
+							{% endfor %}
+						</ol>
+					</div>
 				{% endfor %}
 			</div>
 

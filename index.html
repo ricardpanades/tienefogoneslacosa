@@ -5,49 +5,29 @@ title: Tiene Fogones la Cosa
 id: index
 ---
 
-<ul class="recipes-list layout__wrapper">
+<ul class="recipes-list layout__wrapper" itemscope itemtype="http://schema.org/Blog">
 	{% assign recipes = site.recipes | sort: 'date' | reverse %}
 	{% for recipe in recipes %}
+		<li class="recipes-list__item{% if forloop.first == true %} recipes-list__item--first{% endif %}" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+			<a href="{{recipe.url}}" class="recipe-listing recipe-listing--first" itemprop="url">
+				<div class="recipe-listing__thumbnail img-box">
+					<img src="/assets/img/uploads/{{recipe.thumbnail}}" alt="Imagen de {{recipe.title}}" class="img-box__img" itemprop="image">
+				</div>
 
-	{% if forloop.first == true %}
-	<li class="recipes-list__item recipes-list__item--first">
-		<a href="{{recipe.url}}" class="recipe-listing recipe-listing--first">
-			<div class="recipe-listing__thumbnail img-box">
-				<img src="/assets/img/uploads/{{recipe.thumbnail}}" class="img-box__img">
-			</div>
+				<div class="recipe-listing__content">
+					<h2 class="recipe-listing__title" itemprop="name">{{recipe.title}}</h2>
 
-			<div class="recipe-listing__content">
-				<h2 class="recipe-listing__title">{{recipe.title}}</h2>
+					<ul class="recipe-meta">
+						<li class="recipe-meta__item"><span class="recipe-listing__category">{{recipe.category}}</span></li>
+						<li class="recipe-meta__item"><span class="recipe-listing__difficulty">{{recipe.difficulty}}</span></li>
+					</ul>
 
-				<ul class="recipe-meta">
-					<li class="recipe-meta__item"><span class="recipe-listing__category">{{recipe.category}}</span></li>
-					<li class="recipe-meta__item"><span class="recipe-listing__difficulty">{{recipe.difficulty}}</span></li>
-				</ul>
-
-				<!-- Only if enhanced -->
-				<span class="btn recipe-listing__btn">Ver receta</span>
-			</div>
-		</a>
-	</li>
-	{% else %}
-
-
-	<li class="recipes-list__item">
-		<a href="{{recipe.url}}" class="recipe-listing">
-			<div class="recipe-listing__thumbnail img-box">
-				<img src="/assets/img/uploads/{{recipe.thumbnail}}" class="img-box__img">
-			</div>
-
-			<div class="recipe-listing__content">
-				<h2 class="recipe-listing__title">{{recipe.title}}</h2>
-
-				<ul class="recipe-meta">
-					<li class="recipe-meta__item"><span class="recipe-listing__category">{{recipe.category}}</span></li>
-					<li class="recipe-meta__item"><span class="recipe-listing__difficulty">{{recipe.difficulty}}</span></li>
-				</ul>
-			</div>
-		</a>
-	</li>
-	{% endif %}
+					<!-- Only if enhanced -->
+					{% if forloop.first == true %}
+					<span class="btn recipe-listing__btn">Ver receta</span>
+					{% endif %}
+				</div>
+			</a>
+		</li>
 	{% endfor %}
 </ul>
