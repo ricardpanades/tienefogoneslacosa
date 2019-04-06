@@ -72,6 +72,10 @@ h4 {
 	margin-top: 2rem;
 	margin-bottom: 0;
 	line-height: 1.2;
+
+	&:first-child {
+		margin-top: 0;
+	}
 }
 
 a {
@@ -598,5 +602,73 @@ a {
 					display: inline-block;
 				}
 			}
+}
+
+
+//
+// FORM
+//
+
+.form {
+	&__label {
+		display: block;
+		position: relative;
+	}
+
+	&__label-text {
+		display: block;
+		position: absolute;
+		top: 0.75em;
+		left: 0.875rem;
+	}
+
+	&__input {
+		display: block;
+		width: 100%;
+		padding: 1rem;
+	}
+
+	&__submit-btn {
+		border: 0;
+		margin-top: 1rem;
+	}
+}
+
+
+//
+// NEWS SUBSCRIPTION
+//
+
+.news-subscription {
+	padding: 1rem;
+	background: #fff;
+	margin-top: 1rem;
+
+	&--sidebar {
+		display: none;
+
+		.news-subscription__submit {
+			width: 100%;
+		}
+
+		@media (min-width: 44em) {
+			display: block;
+		}
+	}
+
+	&--body {
+		@media (min-width: 44em) {
+			display: none;
+		}
+	}
+
+	&__text {
+		margin-top: 0.5rem;
+		margin-bottom: 0;
+	}
+
+	&__form {
+		margin-top: 0.5rem;
+	}
 }
 
