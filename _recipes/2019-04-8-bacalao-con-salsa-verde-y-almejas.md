@@ -9,7 +9,7 @@ tags:
   - pescado
 difficulty: Fácil
 recipe-ingredients:
-  - ingredients-list-title: Titulo grupo 1 (opcional)
+  - ingredients-list-title:
     ingredients:
       - 4 lomos de bacalao desalado
       - 20 almejas
