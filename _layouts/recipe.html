@@ -52,7 +52,7 @@ layout: default
 
 			<div class="recipe__elaboration" itemprop="recipeInstructions" itemscope itemtype="http://schema.org/HowTo">
 				{% for elaboration-group in page.elaboration %}
-					<div itemprop="step" itemscope itemtype="http://schema.org/HowToSection">
+					<div class="recipe__steps-group" itemprop="step" itemscope itemtype="http://schema.org/HowToSection">
 						<h2 class="recipe__steps-title" itemprop="name">{{elaboration-group.group-title}}</h2>
 						<ol class="recipe__steps">
 							{% assign steps = elaboration-group.steps %}
@@ -66,6 +66,8 @@ layout: default
 					</div>
 				{% endfor %}
 			</div>
+
+			<img src="/assets/img/uploads/{{page.thumbnail}}" alt="Imagen de {{page.title}}" class="recipe__main-img" itemprop="image">
 
 			<!-- Social Share -->
 			<div class="recipe__social-share social-share">
